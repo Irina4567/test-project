@@ -126,7 +126,6 @@ input {
     font-weight:none;
 }
 
-
 .input-current-from:invalid:not(:placeholder-shown),
 .input-setup-value:invalid:not(:placeholder-shown) {
     border:2px solid red; 
