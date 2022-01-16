@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html class="page" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <metaname="Google" value="notranslate"></metaname>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEST</title>
+    <link href="https://unpkg.com/tabulator-tables@5.0.10/dist/css/tabulator.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/themes/sunny/jquery-ui.css">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body class="page-body">
+    <div class="table">
+    </div>
+    <div class="dialog" id="dialog" title="Dialog">
+        <h1 class="dialog-title">Please, add new data:</h1>
+        <form class="dialog-form form">
+            <div class="form-area">
+                <label class="label-current-from" for="cur_from">Current from:</label>
+                <input class="input-current-from" id="cur_from" name="cur_from" type="text" placeholder="USD" minlength="3" maxlength="6" autocomplete="off" required/>
+                
+                <!-- Datalist для примера ниже
+                Необходимо раскомментировать строки ниже этого комментария
+                И закомментировать строки 21, 22 
+                span не трогать -->
+                <!-- <label class="label-current-from" for="cur_from">Current from:</label>
+                <input class="input-current-from" list = "current-from" id="cur_from" name="cur-from" placeholder="USD" minlength="3" maxlength="6" autocomplete="off" required/> -->
+                <span class="setup-current-from setup setup--error">This field must contain 3 characters</span>
+                <!-- <datalist id="current-from"> 
+                    <option>
+                        USD
+                    </option>
+                    <option>
+                        RU
+                    </option>
+                </datalist> -->
+            </div>
+            <fieldset class="form-fieldset filter">
+                <legend>Current to:</legend>
+                <ul class="filter-list">
+                    <li class="filter-item">
+                        <input class = "radio" id="cur_to" type="radio" value="CAD" name="cur_to" required checked/>    
+                        <label for="cur_to">CAD</label>
+                    </li>
+                    <li class="filter-item">
+                        <input class = "radio" id="cur_to" type="radio" value="MAD" name="cur_to" required/>
+                        <label for="cur_to">MAD</label>
+                    </li>
+                </ul>
+            </fieldset>
+            <div class="form-area">
+                <label class="label-value" for="input-value">Value:</label>
+                <input class="input-setup-value" id="input-value" value="" name="value" type="number" min="0" max="5"  step=".0001"  placeholder="1,5555" autocomplete="off"  required/>
+                <span class="setup-value setup setup--error">This field must contain a number from 0 to 5</span>
+            </div>
+            <div class="form-field field">
+                <label for="date">Date:</label>
+                <input class="date" id="date" name="date" type="date" data-date="" data-date-format="YYYY-MM-DD" value="2022-01-01" min="2000-00-00" max="2100-00-00" required/>
+            </div>
+        </form>
+    </div>
+    <div id="form_result"></div>
+    <button class ="button button-request">Data request</button>
+    <button class="button button-add-data">Add new data</button>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.0.10/dist/js/tabulator.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>
